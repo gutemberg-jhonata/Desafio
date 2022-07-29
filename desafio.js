@@ -1,26 +1,43 @@
-const readline = require('readline-sync')
+const readline = require("readline-sync")
 
 let score = 0
 
-// Fazer o menu de opções
-// 0 - paro o jogo
-// 1 - fácil - 0, 1 (5 pontos)
-// 2 - médio - 0, 5 (10 pontos)
-// 3 - numeros entre 0 e 10 (50 pontos)
 while (true) {
-    const number = readline.question('Digite um numero entre 0 e 5: ')
-    const random = Math.floor(Math.random() * 5)
+    const level = readline.question('Escolha o nivel (1, 2 ou 3): ')
 
-    console.log("Numero aleatório " + random)
-
-    if (number == random) {
-        console.log("Parabens você ganhou!")
-        // score = score + 5
-        score += 5
-    } else {
-        console.log("Você perdeu :(")
+    if (level == 0) {
         break
     }
-}
 
-console.log("Sua pontuação é: " + score)
+    let number
+    let random
+    let scorePoints
+
+    switch (level) {
+        case "1":
+            number = readline.question('Digite um numero de 0 a 1: ')
+            random = Math.floor(Math.random())
+            scorePoints = 5
+            break
+        case "2":
+            number = readline.question('Digite um numero de 0 a 5: ')
+            random = Math.floor(5 * Math.random())
+            scorePoints = 10
+            break
+        case "3":
+            number = readline.question('Digite um numero de 0 a 10: ')
+            random = Math.floor(10 * Math.random())
+            scorePoints = 15
+            break
+    }
+
+    if (number == random) { 
+        console.log("Ganhou!")
+        score += scorePoints 
+    } else {
+        console.log("Perdeu!")
+    }
+
+    console.log("Número gerado: " + random)
+    console.log("Sua pontuação: " + score)
+}
