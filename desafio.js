@@ -38,6 +38,6 @@ while (true) {
         console.log("Perdeu!")
     }
 
-    console.log("Número gerado: " + random)
-    console.log("Sua pontuação: " + score)
+    console.log(`Número gerado: ${random}`)
+    console.log(`Sua pontuação: ${score}`)
 }
