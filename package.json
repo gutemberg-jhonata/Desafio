@@ -1,5 +1,8 @@
 {
   "type": "module",
+  "scripts": {
+    "start": "node desafio.js"
+  },
   "dependencies": {
     "readline-sync": "^1.4.10"
   }
